@@ -4,7 +4,7 @@
 #	ARMOR	#
 #############
 
-@health_1S = 30
+@health_1S = 24
 @health_1M = 50
 @armor_1M = 4
 @armor_1L = 12
