@@ -770,10 +770,10 @@ utility_component_template = {
 	cost = 8
 	
 	modifier = {
-		ship_accuracy_add = 5
+		ship_accuracy_add = 8
 	}
 	ship_modifier = {
-		ship_accuracy_add = 5
+		ship_accuracy_add = 8
 	}
 	
 	prerequisites = { "tech_sensors_2" }
@@ -814,10 +814,10 @@ utility_component_template = {
 	cost = 40
 
 	modifier = {
-		ship_accuracy_add = 20
+		ship_accuracy_add = 16
 	}
 	ship_modifier = {
-		ship_accuracy_add = 20
+		ship_accuracy_add = 16
 	}
 	
 	prerequisites = { "tech_sensors_4" }
@@ -838,7 +838,7 @@ utility_component_template = {
 	cost = 10
 	
 	modifier = {
-		ship_fire_rate_mult = 0.02
+		ship_fire_rate_mult = 0.04
 	}
 	
 	prerequisites = { "tech_combat_computers_1" }
@@ -871,7 +871,7 @@ utility_component_template = {
 	cost = 30
 	
 	modifier = {
-		ship_fire_rate_mult = 0.040
+		ship_fire_rate_mult = 0.07
 	}
 	
 	prerequisites = { "tech_combat_computers_2" }
@@ -904,7 +904,7 @@ utility_component_template = {
 	cost = 60
 	
 	modifier = {
-		ship_fire_rate_mult = 0.08
+		ship_fire_rate_mult = 0.1
 	}
 	
 	prerequisites = { "tech_combat_computers_3" }
@@ -938,7 +938,7 @@ utility_component_template = {
 	cost = 10
 	
 	modifier = {
-		ship_weapon_damage = 0.03
+		ship_weapon_damage = 0.06
 	}
 	
 	prerequisites = { "tech_doctrine_fleet_size_1" }
@@ -961,7 +961,7 @@ utility_component_template = {
 	cost = 30
 	
 	modifier = {
-		ship_weapon_damage = 0.08
+		ship_weapon_damage = 0.09
 	}
 	
 	prerequisites = { "tech_doctrine_fleet_size_3" }
@@ -984,7 +984,7 @@ utility_component_template = {
 	cost = 60
 	
 	modifier = {
-		ship_weapon_damage = 0.15
+		ship_weapon_damage = 0.12
 	}
 	
 	prerequisites = { "tech_doctrine_fleet_size_5" }
