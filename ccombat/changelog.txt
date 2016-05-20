@@ -1,0 +1,22 @@
+Executive Produce Fellowship_9
+Designed and Balanced by Talamare
+
+Buffed Hyper Lanes FTL, Faster Jumpers and More Lanes
+Reduced Ship Combat Speeds
+Less Base Garrison, More gained from Population
+Less Planet Fortification, More gained from Population
+Fortification prevents less damage
+Increased Damage to Fortification
+Ships use more Fleet Capacity
+Spaceports and Population give more Fleet Capacity
+Reduced Energy, Increased Mineral Ship Maintenance
+Reduced Repair cost, Increase Repair Speed
+Increased days before Emergency FTL escape slightly
+Increased effect Armor has on damage reduction
+Reduced Military Station Maintenance
+Reduced Fleet Upgrade Speed and Cost
+Reduced Science Penalty for Population
+Completely rebalanced Weapons
+Added a ton of new Ship Parts
+
+

@@ -1,0 +1,999 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+
+#############
+#	ARMOR	#
+#############
+
+@health_1S = 30
+@health_1M = 50
+@armor_1M = 4
+@armor_1L = 12
+
+@health_2S = 48
+@health_2M = 100
+@armor_2M = 6
+@armor_2L = 18
+
+@health_3S = 72
+@health_3M = 150
+@armor_3M = 8
+@armor_3L = 24
+
+@health_4S = 96
+@health_4M = 200
+@armor_4M = 10
+@armor_4L = 30
+
+@health_5S = 120
+@health_5M = 250
+@armor_5M = 12
+@armor_5L = 36
+
+@crystal_H1S = 80
+@crystal_H1M = 120
+@crystal_H1L = 160
+@crystal_1S = 8
+@crystal_1M = 16
+@crystal_1L = 24
+
+@crystal_H2S = 150
+@crystal_H2M = 200
+@crystal_H2L = 250
+@crystal_2S = 12
+@crystal_2M = 24
+@crystal_2L = 36
+
+
+#############
+#	COST	#
+#############
+
+@cost_1S = 2
+@cost_1M = 4
+@cost_1L = 8
+
+@cost_2S = 4
+@cost_2M = 8
+@cost_2L = 16
+
+@cost_3S = 6
+@cost_3M = 12
+@cost_3L = 24
+
+@cost_4S = 8
+@cost_4M = 16
+@cost_4L = 32
+
+@cost_5S = 10
+@cost_5M = 20
+@cost_5L = 40
+
+#############
+# UTILITIES #
+#############
+
+utility_component_template = {
+	key = "MEDIUM_SCIENCE_LAB_1"
+	size = medium
+	icon = "GFX_ship_part_science_lab_1"
+	icon_frame = 1
+	power = 0
+	cost = 0
+	science_lab_speed = 1
+	science_lab_level = 1
+	class_restriction = { shipclass_science_ship }
+
+	component_set = "science_labs"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+# Plasteel Armor
+utility_component_template = {
+	key = "SMALL_ARMOR_1"
+	size = small
+	icon = "GFX_ship_part_armor_1"
+	icon_frame = 1
+	power = 0
+	cost = @cost_1S
+	modifier = {
+		ship_hitpoints_add = @health_1S
+	}
+	
+	prerequisites = { "tech_ship_armor_1" }
+	component_set = "ARMOR_1"
+	ai_weight = { 
+      weight = 0.5
+   } 
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARMOR_1"
+	size = medium
+	icon = "GFX_ship_part_armor_1"
+	icon_frame = 1
+	power = 0
+	cost = @cost_1M
+	modifier = {
+		ship_hitpoints_add = @health_1M
+	}
+	armor_value = @armor_1M
+	
+	prerequisites = { "tech_ship_armor_1" }
+	component_set = "ARMOR_1"
+}
+
+utility_component_template = {
+	key = "LARGE_ARMOR_1"
+	size = large
+	icon = "GFX_ship_part_armor_1"
+	icon_frame = 1
+	power = 0
+	cost = @cost_1L
+	modifier = {
+		ship_hitpoints_add = @armor_1L
+	}
+	armor_value = @armor_1L
+	prerequisites = { "tech_ship_armor_1" }
+	component_set = "ARMOR_1"
+}
+
+# Durasteel Armor
+utility_component_template = {
+	key = "SMALL_ARMOR_2"
+	size = small
+	icon = "GFX_ship_part_armor_2"
+	icon_frame = 1
+	power = 0
+	cost = @cost_2S
+	modifier = {
+		ship_hitpoints_add = @health_2S
+	}
+	
+	prerequisites = { "tech_ship_armor_2" }
+	component_set = "ARMOR_2"
+		ai_weight = { 
+      weight = 0.5
+   } 
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARMOR_2"
+	size = medium
+	icon = "GFX_ship_part_armor_2"
+	icon_frame = 1
+	power = 0
+	cost = @cost_2M
+	modifier = {
+		ship_hitpoints_add = @health_2M
+	}
+	armor_value = @armor_2M
+	
+	prerequisites = { "tech_ship_armor_2" }
+	component_set = "ARMOR_2"
+}
+
+utility_component_template = {
+	key = "LARGE_ARMOR_2"
+	size = large
+	icon = "GFX_ship_part_armor_2"
+	icon_frame = 1
+	power = 0
+	cost = @cost_2L
+	armor_value = @armor_2L
+	
+	prerequisites = { "tech_ship_armor_2" }
+	component_set = "ARMOR_2"
+}
+
+# Ceramo-Metal Armor
+utility_component_template = {
+	key = "SMALL_ARMOR_3"
+	size = small
+	icon = "GFX_ship_part_armor_3"
+	icon_frame = 1
+	power = 0
+	cost = @cost_3S
+	modifier = {
+		ship_hitpoints_add = @health_3S
+	}
+	
+	prerequisites = { "tech_ship_armor_3" }
+	component_set = "ARMOR_3"
+		ai_weight = { 
+      weight = 0.5
+   } 
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARMOR_3"
+	size = medium
+	icon = "GFX_ship_part_armor_3"
+	icon_frame = 1
+	power = 0
+	cost = @cost_3M
+	modifier = {
+		ship_hitpoints_add = @health_3M
+	}
+	armor_value = @armor_3M
+	prerequisites = { "tech_ship_armor_3" }
+	component_set = "ARMOR_3"
+}
+
+utility_component_template = {
+	key = "LARGE_ARMOR_3"
+	size = large
+	icon = "GFX_ship_part_armor_3"
+	icon_frame = 1
+	power = 0
+	cost = @cost_3L
+	modifier = {
+		ship_hitpoints_add = @armor_3L
+	}
+	armor_value = @armor_3L
+	prerequisites = { "tech_ship_armor_3" }
+	component_set = "ARMOR_3"
+}
+
+# Nanocomposite Armor
+utility_component_template = {
+	key = "SMALL_ARMOR_4"
+	size = small
+	icon = "GFX_ship_part_armor_4"
+	icon_frame = 1
+	power = 0
+	cost = @cost_4S
+	modifier = {
+		ship_hitpoints_add = @health_4S
+	}
+	
+	prerequisites = { "tech_ship_armor_4" }
+	component_set = "ARMOR_4"
+		ai_weight = { 
+      weight = 0.5
+   } 
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARMOR_4"
+	size = medium
+	icon = "GFX_ship_part_armor_4"
+	icon_frame = 1
+	power = 0
+	cost = @cost_4M
+	modifier = {
+		ship_hitpoints_add = @health_4M
+	}
+	armor_value = @armor_4M
+	
+	prerequisites = { "tech_ship_armor_4" }
+	component_set = "ARMOR_4"
+}
+
+utility_component_template = {
+	key = "LARGE_ARMOR_4"
+	size = large
+	icon = "GFX_ship_part_armor_4"
+	icon_frame = 1
+	power = 0
+	cost = @cost_4L
+	armor_value = @armor_4L
+	
+	prerequisites = { "tech_ship_armor_4" }
+	component_set = "ARMOR_4"
+}
+
+# Neutronium Armor
+utility_component_template = {
+	key = "SMALL_ARMOR_5"
+	size = small
+	icon = "GFX_ship_part_armor_5"
+	icon_frame = 1
+	power = 0
+	cost = @cost_5S
+	modifier = {
+		ship_hitpoints_add = @health_5S
+	}
+	
+	prerequisites = { "tech_ship_armor_5" }
+	component_set = "ARMOR_5"
+		ai_weight = { 
+      weight = 0.5
+   } 
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARMOR_5"
+	size = medium
+	icon = "GFX_ship_part_armor_5"
+	icon_frame = 1
+	power = 0
+	cost = @cost_5M
+	modifier = {
+		ship_hitpoints_add = @health_5M
+	}
+	armor_value = @armor_5M
+	
+	prerequisites = { "tech_ship_armor_5" }
+	component_set = "ARMOR_5"
+}
+
+utility_component_template = {
+	key = "LARGE_ARMOR_5"
+	size = large
+	icon = "GFX_ship_part_armor_5"
+	icon_frame = 1
+	power = 0
+	cost = @cost_5L
+	armor_value = @armor_5L
+	
+	prerequisites = { "tech_ship_armor_5" }
+	component_set = "ARMOR_5"
+}
+
+# Crystal-Infused Plating 
+utility_component_template = {
+	key = "SMALL_CRYSTAL_ARMOR_1"
+	size = small
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = -12
+	cost = 12
+	armor_value = @crystal_1S
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H1S		
+	}
+	
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_1"
+}
+
+utility_component_template = {
+	key = "MEDIUM_CRYSTAL_ARMOR_1"
+	size = medium
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = -24
+	cost = 24
+	armor_value = @crystal_1M
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H1M
+	}
+	
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_1"
+}
+
+utility_component_template = {
+	key = "LARGE_CRYSTAL_ARMOR_1"
+	size = large
+	icon = "GFX_ship_part_crystal_armor_1"
+	icon_frame = 1
+	power = -48
+	cost = 48
+	armor_value = @crystal_1L
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H1L
+	}
+	
+	prerequisites = { "tech_crystal_armor_1" }
+	component_set = "CRYSTAL_ARMOR_1"
+}
+
+# Crystal-Forged Plating 
+utility_component_template = {
+	key = "SMALL_CRYSTAL_ARMOR_2"
+	size = small
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = -20
+	cost = 20
+	armor_value = @crystal_2S
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H2S
+	}
+	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_2"
+}
+
+utility_component_template = {
+	key = "MEDIUM_CRYSTAL_ARMOR_2"
+	size = medium
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = -40
+	cost = 40
+	armor_value = @crystal_2M
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H2M
+	}
+	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_2"
+}
+
+utility_component_template = {
+	key = "LARGE_CRYSTAL_ARMOR_2"
+	size = large
+	icon = "GFX_ship_part_crystal_armor_2"
+	icon_frame = 1
+	power = -80
+	cost = 80
+	armor_value = @crystal_2L
+	
+	modifier = {
+		ship_hitpoints_add = @crystal_H2L	
+	}
+	
+	prerequisites = { "tech_crystal_armor_2" }
+	component_set = "CRYSTAL_ARMOR_2"
+}
+
+utility_component_template = {
+	key = "BORDER_EXTRUDER_1"
+	size = medium
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+	power = 0
+	cost = 20
+	border_extrusion_range = 15
+	class_restriction = { shipclass_outpost_station }
+	
+	component_set = "border_extruders"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "BORDER_EXTRUDER_2"
+	size = medium
+	icon = "GFX_ship_part_border_extruder_2"
+	icon_frame = 1
+	power = 0
+	cost = 20
+	border_extrusion_range = 20
+	class_restriction = { shipclass_outpost_station }
+	hidden = yes
+	
+	component_set = "border_extruders"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "BORDER_EXTRUDER_3"
+	size = medium
+	icon = "GFX_ship_part_border_extruder_3"
+	icon_frame = 1
+	power = 0
+	cost = 20
+	border_extrusion_range = 25
+	class_restriction = { shipclass_outpost_station }
+	hidden = yes
+	
+	component_set = "border_extruders"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+#####
+# NEW
+
+# Evasion Booster
+utility_component_template = {
+	key = "SMALL_MICROT_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = -10
+	cost = 10
+	
+	modifier = {
+		ship_evasion_add = 2
+	}
+	
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "MICROT_1"
+		ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_MICROT_1"
+	size = medium
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = -20
+	cost = 20
+	
+	modifier = {
+		ship_evasion_add = 5
+	}
+	
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "MICROT_1"
+		ai_weight = {
+		weight = 240
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+
+utility_component_template = {
+	key = "SMALL_MICROT_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = -20
+	cost = 20
+	
+	modifier = {
+		ship_evasion_add = 4
+	}
+	
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "MICROT_2"
+		ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_MICROT_2"
+	size = medium
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = -40
+	cost = 40
+	
+	modifier = {
+		ship_evasion_add = 10
+	}
+	
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "MICROT_2"
+		ai_weight = {
+		weight = 340
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SMALL_MICROT_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -35
+	cost = 35
+	
+	modifier = {
+		ship_evasion_add = 6
+	}
+	
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "MICROT_3"
+		ai_weight = {
+		weight = 300
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_MICROT_3"
+	size = medium
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -70
+	cost = 70
+	
+	modifier = {
+		ship_evasion_add = 15
+	}
+	
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "MICROT_3"
+		ai_weight = {
+		weight = 440
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "SMALL_MICROT_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -50
+	cost = 50
+	
+	modifier = {
+		ship_evasion_add = 8
+	}
+	
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "MICROT_4"
+		ai_weight = {
+		weight = 400
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_MICROT_4"
+	size = medium
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -100
+	cost = 100
+	
+	modifier = {
+		ship_evasion_add = 20
+	}
+	
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "MICROT_4"
+		ai_weight = {
+		weight = 540
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+}
+
+################
+#Accuracy Booster
+utility_component_template = {
+	key = "SMALL_KILL_1"
+	size = small
+	icon = "GFX_ship_part_sensor_1"
+	icon_frame = 1
+	power = -8
+	cost = 8
+	
+	modifier = {
+		ship_accuracy_add = 5
+	}
+	ship_modifier = {
+		ship_accuracy_add = 5
+	}
+	
+	prerequisites = { "tech_sensors_2" }
+	component_set = "KILL_1"
+	ai_weight = {
+		weight = 1
+	}	
+}
+
+utility_component_template = {
+	key = "SMALL_KILL_2"
+	size = small
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+	power = -20
+	cost = 20
+	
+	prerequisites = { "tech_sensors_3" }
+	component_set = "KILL_2"
+	modifier = {
+		ship_accuracy_add = 12
+	}
+	ship_modifier = {
+		ship_accuracy_add = 12
+	}
+	
+	ai_weight = {
+		weight = 2
+	}	
+}
+
+utility_component_template = {
+	key = "SMALL_KILL_3"
+	size = small
+	icon = "GFX_ship_part_sensor_3"
+	icon_frame = 1
+	power = -40
+	cost = 40
+
+	modifier = {
+		ship_accuracy_add = 20
+	}
+	ship_modifier = {
+		ship_accuracy_add = 20
+	}
+	
+	prerequisites = { "tech_sensors_4" }
+	component_set = "KILL_3"
+	
+	ai_weight = {
+		weight = 3
+	}	
+}
+###########
+#REFIRE
+utility_component_template = {
+	key = "MEDIUM_KILL_1"
+	size = medium
+	icon = "GFX_ship_part_laser_4"
+	icon_frame = 1
+	power = -10
+	cost = 10
+	
+	modifier = {
+		ship_fire_rate_mult = 0.02
+	}
+	
+	prerequisites = { "tech_combat_computers_1" }
+	component_set = "KILL_1"
+		ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_KILL_2"
+	size = medium
+	icon = "GFX_ship_part_laser_5"
+	icon_frame = 1
+	power = -30
+	cost = 30
+	
+	modifier = {
+		ship_fire_rate_mult = 0.040
+	}
+	
+	prerequisites = { "tech_combat_computers_2" }
+	component_set = "KILL_2"
+		ai_weight = {
+		weight = 300
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "MEDIUM_KILL_3"
+	size = medium
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	power = -60
+	cost = 60
+	
+	modifier = {
+		ship_fire_rate_mult = 0.08
+	}
+	
+	prerequisites = { "tech_combat_computers_3" }
+	component_set = "KILL_3"
+		ai_weight = {
+		weight = 400
+		modifier = {
+			factor = 2
+			OR = {
+				has_ethic = "ethic_materialist"
+				has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+	}
+}
+#########
+#DAMAGE
+utility_component_template = {
+	key = "LARGE_KILL_1"
+	size = large
+	icon = "GFX_ship_part_green_crystal_weapon_1"
+	icon_frame = 1
+	power = -10
+	cost = 10
+	
+	modifier = {
+		ship_weapon_damage = 0.03
+	}
+	
+	prerequisites = { "tech_doctrine_fleet_size_1" }
+	component_set = "KILL_1"
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 2
+			has_country_flag = ai_flag_aggressive_personality
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_KILL_2"
+	size = large
+	icon = "GFX_ship_part_yellow_crystal_weapon_1"
+	icon_frame = 1
+	power = -30
+	cost = 30
+	
+	modifier = {
+		ship_weapon_damage = 0.08
+	}
+	
+	prerequisites = { "tech_doctrine_fleet_size_3" }
+	component_set = "KILL_2"
+	ai_weight = {
+		weight = 300
+		modifier = {
+			factor = 2
+			has_country_flag = ai_flag_aggressive_personality
+		}
+	}
+}
+
+utility_component_template = {
+	key = "LARGE_KILL_3"
+	size = large
+	icon = "GFX_ship_part_red_crystal_weapon_1"
+	icon_frame = 1
+	power = -60
+	cost = 60
+	
+	modifier = {
+		ship_weapon_damage = 0.15
+	}
+	
+	prerequisites = { "tech_doctrine_fleet_size_5" }
+	component_set = "KILL_3"
+	ai_weight = {
+		weight = 400
+		modifier = {
+			factor = 2
+			has_country_flag = ai_flag_aggressive_personality
+		}
+	}
+}
