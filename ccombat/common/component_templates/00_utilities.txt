@@ -5,27 +5,27 @@
 #############
 
 @health_1S = 24
-@health_1M = 50
+@health_1M = 40
 @armor_1M = 4
 @armor_1L = 12
 
 @health_2S = 48
-@health_2M = 100
+@health_2M = 80
 @armor_2M = 6
 @armor_2L = 18
 
 @health_3S = 72
-@health_3M = 150
+@health_3M = 120
 @armor_3M = 8
 @armor_3L = 24
 
 @health_4S = 96
-@health_4M = 200
+@health_4M = 160
 @armor_4M = 10
 @armor_4L = 30
 
 @health_5S = 120
-@health_5M = 250
+@health_5M = 200
 @armor_5M = 12
 @armor_5L = 36
 
