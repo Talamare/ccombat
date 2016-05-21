@@ -366,10 +366,10 @@ NDefines = {
 		SENSOR_KNOWLEDGE_HIGH_DIST_PERC = 0.30,		-- See planet classes if distance is 30% of total sensor range sq distance
 		NEBULA_TRAVEL_SPEED_PENALTY = 0.30, 		-- 30% travel speed penalty
 
-		HYPERLANE_GEN_REMOVE_PERC = 0.15,			-- Try to remove 20% of the longest edges
+		HYPERLANE_GEN_REMOVE_PERC = 0.10,			-- Try to remove 20% of the longest edges
 		HYPERLANE_GEN_REMOVED_MAX_DIST = 15, 		-- Don't remove an edge if you have to travel more than 30 stars to reach the same position
 		HYPERLANE_GEN_REMOVE_TOO_MANY_EDGES = 5,	-- Remove edges if having 4 or more edges
-		WORMHOLE_OPEN_SPEED = 1.3,					-- Wormhole opening speed. Wormhole capacity is incremented with this every micro update
+		WORMHOLE_OPEN_SPEED = 1.2,					-- Wormhole opening speed. Wormhole capacity is incremented with this every micro update
 		WORMHOLES_PER_STATION = 1,					-- How many wormholes a station can open at a time
 		WORMHOLE_BASE_CAPACITY_REQUIREMENT = 200,		-- Required wormhole capacity for a jump is base(this one!) + fleet size
 		FTL_TRAIL_DAYS = 360,						-- FLT Trail lifetime in days
@@ -390,7 +390,7 @@ NDefines = {
 		PIRATE_TARGET_DIST 		= 80.0,				-- Target system can't be further away from home system
 
 		FTL_RANGE_WARP 			= 45,				-- Base warp range
-		FTL_RANGE_WORMHOLE 		= 65,				-- Wormhole range
+		FTL_RANGE_WORMHOLE 		= 60,				-- Wormhole range
 		FTL_RANGE_JUMPDRIVE		= 100,				-- Jumpdrive range
 
 		LEADER_POOL_SIZE		= 3,				-- Each leader pool will consist of this many leaders
@@ -717,9 +717,9 @@ NDefines = {
 
 		WARP_WINDUP 						= 1.0, 	-- Distance multiplier to warp windup in microupdates
 		WARP_WINDDOWN 						= 5.5, 	-- Distance multiplier to warp winddown in microupdates
-		WARP_INTERSTELLAR_TRAVEL_SPEED 		= 0.15, -- In micro updates ( 10/day )
+		WARP_INTERSTELLAR_TRAVEL_SPEED 		= 0.10, -- In micro updates ( 10/day )
 
-		HYPERLANE_WINDUP 					= 120,	-- In micro updates ( 10/day )
+		HYPERLANE_WINDUP 					= 150,	-- In micro updates ( 10/day )
 		HYPERLANE_WINDDOWN					= 0,	-- In micro updates
 		JUMPDRIVE_WINDUP					= 150,	-- In micro updates ( 10/day )
 		JUMPDRIVE_WINDDOWN					= 50,	-- In micro updates ( 10/day )
