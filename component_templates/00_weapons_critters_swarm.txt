@@ -29,7 +29,6 @@ weapon_component_template = {
 	component_set = "SCOURGE_MISSILE_1"
 	projectile_gfx = "scourge_missile"
 	tags = { weapon_type_explosive }
-	ai_tags = { weapon_role_long_range }
 }
 
 # Small Spaceport Scourge Missiles
@@ -52,7 +51,6 @@ weapon_component_template = {
 	component_set = "SPACEPORT_SCOURGE_MISSILE"
 	projectile_gfx = "scourge_missile"
 	tags = { weapon_type_explosive }
-	ai_tags = { weapon_role_long_range }
 }
 
 # Medium Spaceport Scourge Missiles
@@ -75,7 +73,6 @@ weapon_component_template = {
 	component_set = "SPACEPORT_SCOURGE_MISSILE"
 	projectile_gfx = "scourge_missile"
 	tags = { weapon_type_explosive }
-	ai_tags = { weapon_role_long_range }
 }
 
 # Large Spaceport Scourge Missiles
@@ -98,7 +95,6 @@ weapon_component_template = {
 	component_set = "SPACEPORT_SCOURGE_MISSILE"
 	projectile_gfx = "scourge_missile"
 	tags = { weapon_type_explosive }
-	ai_tags = { weapon_role_long_range }
 }
 
 ### Projectiles

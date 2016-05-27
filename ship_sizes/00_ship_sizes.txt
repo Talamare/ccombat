@@ -263,7 +263,6 @@ transport = {
 
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	is_designable = yes
-	auto_upgrade = yes
 	class = shipclass_transport
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -422,7 +421,6 @@ mining_station = {
 	class = shipclass_mining_station
 	is_designable = no
 	valid_target_aggressive_stance = no
-	auto_upgrade = yes
 }
 research_station = {
 	max_speed = 0.0
@@ -446,7 +444,6 @@ research_station = {
 	class = shipclass_research_station
 	is_designable = no
 	valid_target_aggressive_stance = no
-	auto_upgrade = yes
 }
 wormhole_station = {
 	max_speed = 0.0

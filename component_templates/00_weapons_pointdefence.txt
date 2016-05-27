@@ -21,8 +21,7 @@ weapon_component_template = {
 	component_set = "POINT_DEFENCE_1"
 	type = point_defence
 	projectile_gfx = "red_laser_pd"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
-	ai_tags = { weapon_role_point_defense }
+	tags = { weapon_type_point_defense }
 }
 
 ### Point Defence 2
@@ -46,8 +45,7 @@ weapon_component_template = {
 	component_set = "POINT_DEFENCE_2"
 	type = point_defence
 	projectile_gfx = "blue_laser_pd"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
-	ai_tags = { weapon_role_point_defense }
+	tags = { weapon_type_point_defense }
 }
 
 ### Point Defence 3
@@ -71,8 +69,7 @@ weapon_component_template = {
 	component_set = "POINT_DEFENCE_3"
 	type = point_defence
 	projectile_gfx = "white_laser_pd"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
-	ai_tags = { weapon_role_point_defense }
+	tags = { weapon_type_point_defense }
 }
 
 
@@ -99,9 +96,8 @@ weapon_component_template = {
 	cost = 6
 	prerequisites = { "tech_flak_batteries_1" }
 	component_set = "FLAK_BATTERY_1"
-	projectile_gfx = "mass_driver_m"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
-	ai_tags = { weapon_role_point_defense weapon_role_short_range }
+	projectile_gfx = "flak_battery"
+	tags = { weapon_type_point_defense }
 }
 
 # ## Flak Battery 2
@@ -123,7 +119,6 @@ weapon_component_template = {
 	cost = 6
 	prerequisites = { "tech_flak_batteries_2" }
 	component_set = "FLAK_BATTERY_2"
-	projectile_gfx = "mass_driver_m"
-	tags = { weapon_type_point_defense weapon_type_kinetic }
-	ai_tags = { weapon_role_point_defense weapon_role_short_range }
+	projectile_gfx = "flak_battery"
+	tags = { weapon_type_point_defense }
 }

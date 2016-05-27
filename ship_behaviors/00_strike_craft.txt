@@ -4,9 +4,9 @@
 
 ship_behavior = {
 	name = "fighters_behavior"
-	preferred_attack_range = max
-	formation_distance = 80
-	return_to_formation_distance = 85
+	preferred_attack_range = 4.0
+	formation_distance = 5
+	return_to_formation_distance = 15
 
 	attack_move_pattern = charge
 	passive_move_pattern = orbit
@@ -26,9 +26,9 @@ ship_behavior = {
 
 ship_behavior = {
 	name = "bombers_behavior"
-	preferred_attack_range = max
-	formation_distance = 80
-	return_to_formation_distance = 85
+	preferred_attack_range = 4.0
+	formation_distance = 3
+	return_to_formation_distance = 15
 	
 	attack_move_pattern = charge
 	passive_move_pattern = orbit
