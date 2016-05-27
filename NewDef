@@ -1,3 +1,6 @@
+-- Note: for modding, avoid overwriting this file - instead overwrite individual
+-- keys from another lua file using the format NDefines.NCamera.FOV = 50
+
 NDefines = {
 
 	NCamera = {
@@ -343,6 +346,9 @@ NDefines = {
 	},
 
 	NGameplay = {
+		ALLOW_EMPIRE_DESIGN_CHEATS = false,
+		VICTORY_CONDITION_DOMINATION = 0.4,
+		
 		PRE_COMMUNICATIONS_EMPIRE_FLAG = "special/unknown.dds",
 		FLEET_MIN_TI_CLEAR_RADIUS = 10,			-- min radius for clearing terra incognita, will use the highest of this and sensor range
 		TI_TEXTURE_SIZE = 256,					-- size of the internal terra incognita texture, high resolutions can cause stuttering and will increase memory demand and save file size.
@@ -403,6 +409,8 @@ NDefines = {
 		LEADER_SKILL_MIN		= 1,
 		LEADER_EXP_MIN			= 200,
 		LEADER_EXP_MAX			= 400,
+		LEADER_AGE_HEIR_MIN		= 18,				-- Min age of generated heirs in dynastic governments
+		LEADER_AGE_HEIR_MAX		= 24,				-- Max age of generated heirs in dynastic governments
 		LEADER_AGE_MIN			= 28,				-- Min age of generated leaders
 		LEADER_AGE_MAX			= 50,				-- Max age of generated leaders
 		LEADER_SKILL_LEVEL_START	= 1,			-- Skill Level Leaders start with. XP needed { 200 475 825 1250 }
@@ -430,6 +438,7 @@ NDefines = {
 		LEADER_GOVERNOR_BUILDING_OR_TILE_CLEAR_EXPERIENCE			= 0.5, -- Scale-value for each completed building-construction or tile-clear, multiplied with the resources spent
 		LEADER_GOVERNOR_EDICT_GAIN_EXPERIENCE						= 0.05, -- Scale-value for the exp-gain given each month an Edict is active on the planet, multiplied with the resources spent
 		LEADER_GOVERNOR_POP_IS_BORN_EXPERIENCE						= 8, -- Exp-gain for each Pop born
+		LEADER_GOVERNOR_SECTOR_MONTHLY_EXPERIENCE					= 3.5,	-- Monthy exp from governing sector.
 
 		LEADER_AGE_DEATH_CHANCE_AGE	= 72,			-- Before this age the chance wont increase
 		LEADER_AGE_DEATH_CHANCE_INC = 0.01,			-- Increase with these % for each year above CHANCE_AGE
@@ -456,7 +465,9 @@ NDefines = {
 		WAR_SCORE_PLANET_BASE				= 10.0,		-- Relative warscore value of a planet
 		WAR_SCORE_PLANET_BUILDING			= 1.0,		-- Relative warscore value of a planet for every building
 		WAR_SCORE_OCCUPATION_MUL			= 1.5,		-- 150% warscore gained from completely occupying the opponents
-
+		WAR_SCORE_PLANET_MIN 				= 5.0,		-- Warscore from 1 planet will never be less than this
+		WAR_SCORE_WARGOAL_MULT				= 2.0,		-- Wargoal planets are worth this much more
+		
 		REBELS_JOIN_DISTANCE_SQRT			= 100.0,	-- Distance threshold if rebels are to join an already existing rebel.
 		REBELS_POWER_THRESHOLD 				= 0.5, 		-- A Threshold that controls when rebels think they have a chance, Higher = more unwilling
 		
@@ -597,9 +608,9 @@ NDefines = {
 		TECH_WEIGHT_BASE						= 10,
 		TECH_WEIGHT_POTENTIAL_ADD				= 0,
 		TECH_RESEARCH_NO_LEADER_PENALTY			= -0.25,
-		TECH_COST_MULT_NUM_COLONIES				= 0.0, -- Each Planet adds +X% tech cost
+		TECH_COST_MULT_NUM_COLONIES				= 0.1, -- Each Planet adds +X% tech cost
 		TECH_COST_FREE_POPS						= 10, -- First X pops do not add any tech cost
-		TECH_COST_MULT_NUM_POPS					= 0.02, -- Each non-free Pop adds +X% tech cost
+		TECH_COST_MULT_NUM_POPS					= 0.01, -- Each non-free Pop adds +X% tech cost
 		TECH_WEIGHT_PREVIOUS_OPTION				= 0.5,	-- If a tech was one of the alternatives last time its weight will be multiplied with TECH_WEIGHT_PREVIOUS_OPTION
 
 		KEYBOARD_DOUBLE_CLICK_TIME				= 0.5,	-- Seconds listening to control group double clicks.
@@ -763,8 +774,7 @@ NDefines = {
 
 	NPop = {
 		MAX_POPS_BASE 						= 10,		-- Max pops is base multiplied by planet size
-		MIGRATION_CROWDING_EFFECT			= 0.20,		-- How much does crowding affect where pops want to migrate
-		MIN_FOOD_SURPLUS_FOR_MIGRATION		= 3,		-- Only if this much food surplus on target planet
+		MIGRATION_CROWDING_EFFECT			= 0.25,		-- How much does crowding affect where pops want to migrate
 		MIN_HAPPINESS_DIFF_FOR_MIGRATION 	= 0.1,		-- Only if the difference in happiness is greater than this will a pop migrate
 		MIN_HABITABILITY_TO_MIGRATE			= 0.5,		-- Will not migrate to players with habitability under this
 		MIGRATION_SPEED						= 0.05,		-- Monthly migration speed of pops: when the pop has reached a migration progress of 1, it will be moved
@@ -834,7 +844,7 @@ NDefines = {
 	},
 
 	NEconomy = {
-		MILITARY_STATION_MAINTENANCE_MUL	= 0.75,		-- Monthly military station maintenance multiplier
+		MILITARY_STATION_MAINTENANCE_MUL	= -0.25,		-- Monthly military station maintenance reduction
 
 		COLONY_MONTHLY_GROWTH				= 2.0,	-- How much the colonization pop grows every month.
 		COLONY_MAINTENANCE_COST 			= 8,		-- Base cost per month for a new colony.
@@ -854,8 +864,8 @@ NDefines = {
 		COLONY_SHIP_PRODUCTION				= 350.0, 	-- Colony ship production cost
 		SPONSORED_COLONY_SHIP_PRODUCTION	= 250.0, 	-- Sponsored colony ship production cost
 		FLEET_UPGRADE_TIME_COST_MULT		= 0.25,		-- Upgrade fleet cost
-		FLEET_UPGRADE_MINERAL_COST_BASE		= 5.0,		-- mineral cost of ship upgrade is base + abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
-		FLEET_UPGRADE_MINERAL_COST_MULT		= 0.75,		
+		FLEET_UPGRADE_MINERAL_COST_BASE		= 5.0,		-- mineral cost to upgrade a ship is always at least this, regardless of relative design cost
+		FLEET_UPGRADE_MINERAL_COST_MULT		= 0.75,		-- mineral cost of ship upgrade is abs( price difference between old and new designs * FLEET_UPGRADE_MINERAL_COST_MULT )
 		OBSERVATION_STATION_MAINTENANCE		= 1.0,		-- Monthly observation station maintenance
 		SPACEPORT_UPGRADE_COSTS				= { 300.0, 450.0, 600.0, 850.0, 1000.0 }, -- Mineral costs for upgrading the spaceport
 		SEVERE_DEFICIT_VALUE				= 0.8,		-- Balance/Income smaller than this value counts as severe
@@ -876,15 +886,27 @@ NDefines = {
 	},
 
 	NAI = {
+		WAS_HUMAN_MONTHS = 120,							-- Amount of months that the AI will refrain from making large changes to the empire if it's taking over from a player
+	
+		DEFICIT_SPENDING_START_WAR = 0.25,				-- If at war and energy is at this fraction of max storage, deficit spend energy
+		DEFICIT_SPENDING_START_PEACE = 0.75,			-- If at peace and energy is at this fraction of max storage, deficit spend energy
+		DEFICIT_SPENDING_STOP_WAR = 0.1,				-- If at war and energy is at this fraction of max storage, stop deficit spending
+		DEFICIT_SPENDING_STOP_PEACE = 0.5,				-- If at peace and energy is at this fraction of max storage, stop deficit spending
+		DEFICIT_SPENDING_MONTHLY_PEACE = 0.003,				-- This percentage of max storage should be deficit spent each month when at peace
+		DEFICIT_SPENDING_MONTHLY_WAR = 0.005,				-- This percentage of max storage should be deficit spent each month when at war
+	
 		BROKEN_TRADE_DEAL_FACTOR = 0.1,				-- How much does each broken trade deal affect future trade willingness ( * value of deal and years )
 		BROKEN_TRADE_DEAL_MAX = 50,	
 		BROKEN_TRADE_DEAL_DECAY = -0.05,			-- Per month
 	
+		THREAT_PLANET_MULT = 5,						-- Base threat multiplier for planet
+		THREAT_POP_MULT = 0.33,						-- Base threat multiplier for pop
 		DIPLOVASSALIZE_THREAT = 1.5,					-- Threat generated from diplovassalization (scales with size of vassalized empire)
+		
 		HIGH_THREAT_THRESHOLD = 50,					-- Must have at least this much threat to become fearful		
 		SHARED_THREAT_MULT = 0.5,					-- How much does having a shared threat boost opinion?
-		SHARED_THREAT_MAX = 200,					
-		THREAT_DECAY = -0.5,							-- Each month
+		SHARED_THREAT_MAX = 200,	 				
+		THREAT_DECAY = -0.25,							-- Each month
 		THREAT_DISTANCE_FACTOR = 0.01,				-- The higher this is, the larger the threat reduction from being far away
 		THREAT_SIZE_FACTOR = 1.0,					-- How much does the relative power of the aggressive empire affect threat?
 		THREAT_SIZE_FACTOR_MAX = 2.0,
@@ -893,7 +915,12 @@ NDefines = {
 		THREAT_NEGATIVE_OPINION_FACTOR = 0.002,
 		THREAT_OPINION_MAX = 1.25,
 		THREAT_OPINION_MIN = 0.75,
+		
+		COLONIZE_NON_ADJACENT = 0,				-- If enabled, AI will colonize far away systems (will result in border gore)
+		COLONIZE_NON_ADJACENT_DIV = 3,			-- If colony is far away, divide priority to colonize it by this
 	
+		AI_AGGRESSIVENESS_LOW_MULT = 0.5,		
+		AI_AGGRESSIVENESS_HIGH_MULT = 2.0,			
 		AI_AGGRESSIVENESS_BASE = 25,			-- Base chance AI will declare a war (multiplied by personality aggressiveness score)
 		AI_AGGRESSIVENESS_PROPAGATOR_BOXED_IN_MULT = 10,	-- When a warlike 'propagator' personality is boxed in, aggression is multiplied by this value
 		AI_AGGRESSIVENESS_BOXED_IN_MULT = 4,	-- When an AI can no longer peacefully expand, aggression is multiplied by this value
@@ -992,7 +1019,7 @@ NDefines = {
 		TRADE_VALUE_TRADE_ACCESS_MAX = 2.5, -- Multiplied by treaty years
 		TRADE_VALUE_MIGRATION_ACCESS = 0.5, -- Per planet they own
 		TRADE_VALUE_MIGRATION_ACCESS_MAX = 5, -- Multiplied by treaty years
-		TRADE_VALUE_RESEARCH_AGREEMENT = 0.25, -- Per tech they have that we don't
+		TRADE_VALUE_RESEARCH_AGREEMENT = 0.1, -- Per tech they have that we don't
 		TRADE_VALUE_RESEARCH_AGREEMENT_MAX = 5, -- Multiplied by treaty years			
 		-- Above are various acceptance factors for specific actions
 		
@@ -1003,8 +1030,8 @@ NDefines = {
 		ARMY_BUDGET_FRACTION = 0.05,   			-- AI will spend this fraction of their income on armies
 		NAVY_BUDGET_FRACTION = 0.15, 			-- AI will spend this fraction of their income on ships
 		STATION_BUDGET_FRACTION = 0.35, 		-- AI will spend this fraction of their income on stations
-		BUILDING_BUDGET_FRACTION = 0.30, 		-- AI will spend this fraction of their income on buildings
-		ROBOT_BUDGET_FRACTION = 0.05,			-- AI will spend this fraction of their income on robots (transfered to stations if they don't use robots)
+		BUILDING_BUDGET_FRACTION = 0.25, 		-- AI will spend this fraction of their income on buildings
+		ROBOT_BUDGET_FRACTION = 0.10,			-- AI will spend this fraction of their income on robots (transfered to stations & buildings if they don't use robots)
 		
 		SHIPSIZE_BUDGET_FACTOR = 0.05,			-- For each ship size unlocked, increase navy budget by this amount
 		NAVAL_CAPACITY_BUDGET_MAX = 100,		-- At this naval capacity, AI puts max budget into ships
@@ -1048,7 +1075,7 @@ NDefines = {
 		AI_DESIRED_ARMY_MINERALS_AT_WAR = 100,		-- AI wants at least this many minerals for armies while at war
 		-- Above values are increased when mineral storage capacity goes up
 		
-		MAX_MINERALS_STORED_SECTOR_POST = 500,		-- Minerals AI will store for each budget post in sectors	
+		MAX_MINERALS_STORED_SECTOR_POST = 1000,		-- Minerals AI will store for each budget post in sectors	
 		MAX_MINERALS_SPENT_ON_NAVY = 0.50,			-- Spend no more than this fraction of mineral income on navy maintenance
 
 		EXPECTED_MINERALS_BASE = 30,				-- AI expects to make this base amount in minerals
@@ -1056,7 +1083,7 @@ NDefines = {
 		EXPECTED_TECH_BASE = 10,						-- AI expects to make this base amount in tech
 		EXPECTED_TECH_PER_POP = 1,					-- AI expects to make about their num pops x this in tech
 		EXPECTED_ENERGY_BASE = 20,					-- AI expects to make this base amount in energy
-		EXPECTED_ENERGY_PER_POP = 1,				-- AI expects to make about their num pops x this in energy
+		EXPECTED_ENERGY_PER_POP = 0.75,				-- AI expects to make about their num pops x this in energy
 		EXPECTED_ENERGY_SURPLUS = 3,				-- AI wants a surplus of least this amount in monthly energy production (temporary spending such as colonies does not count)
 		EXPECTED_SECTOR_ENERGY_SURPLUS = 3,			-- As above, but for sectors
 		
@@ -1089,8 +1116,8 @@ NDefines = {
 		ABORT_MISSION_LIMIT = 0.40,				-- MilitaryPower fraction below this level will result in AI escaping battle
 
 		PEACE_MIN_WARSCORE_TO_DEMAND = 20,
-		PEACE_LENGTH_OF_WAR_MONTHS = 60,			
-		PEACE_LENGTH_OF_WAR_UNDER_FACTOR = -0.8,
+		PEACE_LENGTH_OF_WAR_MONTHS = 120,			
+		PEACE_LENGTH_OF_WAR_UNDER_FACTOR = -0.4,
 		PEACE_LENGTH_OF_WAR_OVER_FACTOR = 0.2,
 		PEACE_RELATIVE_NAVY_STRENGTH_FACTOR = 20,	
 		PEACE_OTHER_WARS_FACTOR = 10,
@@ -1108,9 +1135,9 @@ NDefines = {
 		
 		INFLUENCE_MAX_STORED_PER_POST = 200,				-- Max stored in any single influence budget post
 		
-		INFLUENCE_BUDGET_STATIONS = 0.35,			-- Fraction of monthly influence that is used on stations (frontier outposts)
+		INFLUENCE_BUDGET_STATIONS = 0.40,			-- Fraction of monthly influence that is used on stations (frontier outposts)
 		INFLUENCE_BUDGET_EDICTS = 0.25,				-- Fraction of monthly influence that is used on edicts
-		INFLUENCE_BUDGET_SAVINGS = 0.40,				-- Fraction of monthly influence that is saved
+		INFLUENCE_BUDGET_SAVINGS = 0.35,				-- Fraction of monthly influence that is saved
 
 		THREAT_TRUCE_MONTHS = 12,				-- AI will not consider the opponent a threat if this many months are left on a truce
 		FLEET_BALANCE_THREAT = 0.5,				-- If FleetPower of AI / FleetPower of Enemy is lower than this, AI will consider the country a threat
@@ -1140,17 +1167,17 @@ NDefines = {
 		SECTOR_FOCUS_EFFECT = 10,				-- Resources designated as the focus of a sector are valued this much more
 		SECTOR_IGNORE_TILE_RESOURCE = 0,		-- Should sectors ignore which resources are on the tile when building?
 		
-		SECTOR_STATION_BUDGET_FRACTION = 0.20,	-- Fraction of budget going to stations
+		SECTOR_STATION_BUDGET_FRACTION = 0.30,	-- Fraction of budget going to stations
 		SECTOR_BUILDING_BUDGET_FRACTION = 0.40, -- Fraction of budget going to buildings
-		SECTOR_SPACEPORT_BUDGET_FRACTION = 0.30,-- Fraction of budget going to spaceports
-		SECTOR_ARMY_BUDGET_FRACTION = 0.10,		-- Fraction of budget going to spaceports
+		SECTOR_SPACEPORT_BUDGET_FRACTION = 0.20,-- Fraction of budget going to spaceports
+		SECTOR_ARMY_BUDGET_FRACTION = 0.10,		-- Fraction of budget going to armies
 		SECTOR_MINERALS_NEED_THRESHOLD = 5,		-- Minerals needed per month before starting to build other buildings
 
-		SECTOR_BUILDING_MAINT_BUDGET_FRACTION = 0.50, -- Fraction of maintenance budget going to buildings
-		SECTOR_STATION_MAINT_BUDGET_FRACTION = 0.40,-- Fraction of maintenance budget going to spaceports and stations
-		SECTOR_ARMY_MAINT_BUDGET_FRACTION = 0.10,	-- Fraction of maintenance budget going to spaceports and stations
+		SECTOR_BUILDING_MAINT_BUDGET_FRACTION = 0.40, -- Fraction of maintenance budget going to buildings
+		SECTOR_STATION_MAINT_BUDGET_FRACTION = 0.50,-- Fraction of maintenance budget going to spaceports and stations
+		SECTOR_ARMY_MAINT_BUDGET_FRACTION = 0.10,		-- Fraction of maintenance budget going to spaceports and stations
 
-		ATTITUDE_CHANGE_BUFFER = 0,			-- Don't change attitude if weight diff is less than this
+		ATTITUDE_CHANGE_BUFFER = 0,					-- Don't change attitude if weight diff is less than this
 
 		AI_COMMUNICATIONS_RANDOM_VALUE = 60,		-- AI communications days will vary with +- these many days
 		
